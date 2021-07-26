@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "./Buscador.css";
 import { getMovies, addMovieFavorite } from "../../actions/index.js";
+import { AiFillHeart, AiOutlineSearch } from "react-icons/ai";
 
 export class Buscador extends Component {
   constructor(props) {
@@ -37,13 +38,17 @@ export class Buscador extends Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
-          <button type="submit">BUSCAR</button>
+          <button type="submit">
+            <AiOutlineSearch />
+          </button>
         </form>
-        <ul>
-          {/* Aqui tienes que escribir tu codigo para mostrar la lista de peliculas */}
+
+        {/* Aqui tienes que escribir tu codigo para mostrar la lista de peliculas */}
+        <div className="content">
           {this.props.movies &&
             this.props.movies.map((movie) => (
-              <div key={movie.imdbID}>
+              <div key={movie.imdbID} className="movie">
+                <img src={movie.Poster} alt="poster" />
                 <Link to={`/movie/${movie.imdbID}`}> {movie.Title}</Link>
                 <button
                   onClick={() =>
@@ -53,11 +58,11 @@ export class Buscador extends Component {
                     })
                   }
                 >
-                  Fav
+                  <AiFillHeart />
                 </button>
               </div>
             ))}
-        </ul>
+        </div>
       </div>
     );
   }

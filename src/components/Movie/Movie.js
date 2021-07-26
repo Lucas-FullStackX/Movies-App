@@ -13,14 +13,40 @@ class Movie extends React.Component {
     return (
       <div className="movie-detail">
         {this.props.movie ? (
-          <div>
+          <div className="detail">
             <h2>{this.props.movie.Title}</h2>
             <img src={this.props.movie.Poster} alt="poster" />
-            <h4>Resume:</h4>
-            <p>{this.props.movie.Plot}</p>
+            <p>
+              <b>Year: </b>
+              {this.props.movie.Year} {this.props.movie.Country}
+            </p>
+            <p>
+              <b>Resume:</b>
+              <br />
+              {this.props.movie.Plot}
+            </p>
+            <p>
+              <b>Genre: </b>
+              {this.props.movie.Genre}
+            </p>
+            <p>
+              <b>Director: </b>
+              {this.props.movie.Director}
+            </p>
+            <p>
+              <b>Actors: </b>
+              {this.props.movie.Actors}
+            </p>
+            <p>
+              <b>Writer: </b>
+              {this.props.movie.Writer}
+            </p>
           </div>
         ) : (
-          <img src="https://acegif.com/wp-content/uploads/loading-21.gif" />
+          <img
+            src="https://acegif.com/wp-content/uploads/loading-21.gif"
+            alt="cargando"
+          />
         )}
       </div>
     );

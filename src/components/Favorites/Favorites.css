@@ -1,3 +1,35 @@
 .cnt {
     padding-top: 10px;
 }
+.favorite{
+    background-color:#373e40;
+    height: 70px;
+    border-radius: 10px;
+    width:500px;
+    margin: 5px 0;
+    position: relative;
+}
+.favorite a{
+    text-decoration: none;
+    color: #fff;
+    align-self: center;
+    position: relative;
+    top: 23px;
+    left: 20px;
+}
+.favorite button{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: rgb(230, 48, 48);
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0);
+    cursor:pointer
+}
+input, button {
+    border:none;
+}
+
+.favorite:hover {
+    background-color: #488286;
+}

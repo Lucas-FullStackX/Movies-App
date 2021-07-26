@@ -8,13 +8,12 @@ export class ConnectedList extends Component {
   render() {
     return (
       <div>
-        <h2>Películas Favoritas</h2>
+        <h2>Favorites Movies</h2>
         <ul>
           {this.props.movies &&
             this.props.movies.map((movie) => (
-              <div key={movie.id}>
+              <div className="favorite" key={movie.id}>
                 <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
-                <h3>{movie.id}</h3>
                 <button onClick={() => this.props.removeMovie(movie.id)}>
                   X
                 </button>
