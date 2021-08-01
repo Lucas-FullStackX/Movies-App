@@ -32,15 +32,24 @@
     text-align:center;
     text-decoration: none;
     color: #fff;
-    align-self: center;
-    width: 100%;
 }
 .movie img{
     width: 100%;
 }
-.movie button{
-    background-color: rgba(0, 0, 0, 0)
+.movie svg{
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(255, 255, 255);
+    margin-bottom: 5px
 }
 .movie:hover {-webkit-transform:scale(1.1);transform:scale(1.1);
 background-color: #488286;}
 .movie {overflow:hidden;}
+.movieTitle{
+    width: 100%;
+    margin: 0 20px 10px 20px
+}
+
+.movie svg:hover{
+    color:rgb(211, 62, 62)
+}

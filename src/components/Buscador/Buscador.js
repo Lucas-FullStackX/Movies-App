@@ -48,18 +48,22 @@ export class Buscador extends Component {
           {this.props.movies &&
             this.props.movies.map((movie) => (
               <div key={movie.imdbID} className="movie">
-                <img src={movie.Poster} alt="poster" />
-                <Link to={`/movie/${movie.imdbID}`}> {movie.Title}</Link>
-                <button
-                  onClick={() =>
+                <Link to={`/movie/${movie.imdbID}`} className="link">
+                  <img src={movie.Poster} alt="poster" />
+                </Link>
+                <Link to={`/movie/${movie.imdbID}`} className="movieTitle">
+                  {movie.Title}
+                </Link>
+
+                <AiFillHeart
+                  onClick={() => {
+                    alert(`${movie.Title} has been added to favorites`);
                     this.props.addMovieFavorite({
                       title: movie.Title,
                       id: movie.imdbID,
-                    })
-                  }
-                >
-                  <AiFillHeart />
-                </button>
+                    });
+                  }}
+                />
               </div>
             ))}
         </div>

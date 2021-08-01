@@ -5,10 +5,16 @@ const initialState = {
 };
 function rootReducer(state = initialState, action) {
   if (action.type === "ADD_MOVIE_FAVORITE") {
-    return {
-      ...state,
-      moviesFavorites: state.moviesFavorites.concat(action.payload),
-    };
+    let found = state.moviesFavorites.find((i) => i.id === action.payload.id);
+    if (found) {
+      console.log("llegue");
+      return { ...state };
+    } else {
+      return {
+        ...state,
+        moviesFavorites: state.moviesFavorites.concat(action.payload),
+      };
+    }
   }
   if (action.type === "GET_MOVIES") {
     return {
